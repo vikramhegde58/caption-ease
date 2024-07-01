@@ -4,7 +4,7 @@ import {ChangeEvent, useState} from 'react'
 import {useRouter} from 'next/navigation'
 import {Loader} from './Loader'
 
-const SUPPORTED_FORMAT = ['AMR', 'FLAC', 'M4A', 'MP3', 'MP4', 'Ogg', 'WebM', 'WAV']
+const SUPPORTED_FORMAT = ['amr', 'flac', 'm4a', 'mp3', 'mp4', 'ogg', 'webm', 'wav']
 
 export const FileInput = () => {
     const [isUploading, setIsUploading] = useState(false)
