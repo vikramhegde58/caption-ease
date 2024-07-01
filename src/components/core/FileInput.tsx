@@ -4,7 +4,7 @@ import {ChangeEvent, useState} from 'react'
 import {useRouter} from 'next/navigation'
 import {Loader} from './Loader'
 
-const SUPPORTED_FORMAT = ['amr', 'flac', 'm4a', 'mp3', 'mp4', 'ogg', 'webm', 'wav']
+const SUPPORTED_FORMAT = ['amr', 'flac', 'm4a', 'mp3', 'video/mp4', 'ogg', 'webm', 'wav']
 
 export const FileInput = () => {
     const [isUploading, setIsUploading] = useState(false)
@@ -12,6 +12,7 @@ export const FileInput = () => {
     const router = useRouter()
     async function upload(ev: ChangeEvent<HTMLInputElement>) {
         ev.preventDefault()
+        error && setError('')
         const files = ev.target.files
         if (!files) {
             return
